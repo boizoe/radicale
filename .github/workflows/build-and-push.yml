@@ -1,6 +1,8 @@
 name: build and push a container image
 
-on: [push]
+on:
+  schedule:
+    - cron: '37 10 * * *'
 
 env:
   REGISTRY: ghcr.io
