@@ -12,6 +12,6 @@ RUN apk add --no-cache ca-certificates openssl git \
  && apk add --no-cache --virtual .build-deps gcc libffi-dev musl-dev \
  && pip install --no-cache-dir "Radicale[bcrypt] @ https://github.com/Kozea/Radicale/archive/${VERSION}.tar.gz" \
  && apk del .build-deps \
- && useradd -D radicale
+ && adduser -u 1000 -D radicale
 
 USER radicale
